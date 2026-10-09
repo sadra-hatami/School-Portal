@@ -12,8 +12,9 @@ if(isset($_POST['submit']))
 {
 $coursecode=$_POST['coursecode'];
 $coursename=$_POST['coursename'];
-
-$ret=mysqli_query($con,"insert into courses(courseCode,courseName) values('$coursecode','$coursename')");
+$courseunit=$_POST['courseunit'];
+$seatlimit=$_POST['seatlimit'];
+$ret=mysqli_query($con,"insert into course(courseCode,courseName,courseUnit,noofSeats) values('$coursecode','$coursename','$courseunit','$seatlimit')");
 if($ret)
 {
 $_SESSION['msg']="Course Created Successfully !!";
@@ -25,7 +26,7 @@ else
 }
 if(isset($_GET['del']))
       {
-              mysqli_query($con,"delete from courses where courseId = ".$_GET['id']);
+              mysqli_query($con,"delete from course where id = '".$_GET['id']."'");
                   $_SESSION['delmsg']="Course deleted !!";
       }
 ?>
@@ -81,6 +82,15 @@ if(isset($_GET['del']))
     <input type="text" class="form-control" id="coursename" name="coursename" placeholder="Course Name" required />
   </div>
 
+<div class="form-group">
+    <label for="courseunit">Course unit  </label>
+    <input type="text" class="form-control" id="courseunit" name="courseunit" placeholder="Course Unit" required />
+  </div> 
+
+<div class="form-group">
+    <label for="seatlimit">Seat limit  </label>
+    <input type="text" class="form-control" id="seatlimit" name="seatlimit" placeholder="Seat limit" required />
+  </div>   
 
  <button type="submit" name="submit" class="btn btn-default">Submit</button>
 </form>
@@ -105,13 +115,15 @@ if(isset($_GET['del']))
                                             <th>#</th>
                                             <th>Course Code</th>
                                             <th>Course Name </th>
-                                           
+                                            <th>Course Unit</th>
+                                            <th>Seat limit</th>
+                                             <th>Creation Date</th>
                                              <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 <?php
-$sql=mysqli_query($con,"select * from courses");
+$sql=mysqli_query($con,"select * from course");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
@@ -122,10 +134,13 @@ while($row=mysqli_fetch_array($sql))
                                             <td><?php echo $cnt;?></td>
                                             <td><?php echo htmlentities($row['courseCode']);?></td>
                                             <td><?php echo htmlentities($row['courseName']);?></td>
-                                        
+                                            <td><?php echo htmlentities($row['courseUnit']);?></td>
+                                             <td><?php echo htmlentities($row['noofSeats']);?></td>
+                                            <td><?php echo htmlentities($row['creationDate']);?></td>
                                             <td>
-                                                                                  
-  <a href="language.php?id=<?php echo $row['courseId']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')">
+                                            <a href="edit-course.php?id=<?php echo $row['id']?>">
+<button class="btn btn-primary"><i class="fa fa-edit "></i> Edit</button> </a>                                        
+  <a href="course.php?id=<?php echo $row['id']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')">
                                             <button class="btn btn-danger">Delete</button>
 </a>
                                             </td>
