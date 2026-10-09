@@ -22,7 +22,6 @@ A two-sided school desk: students enroll and read marks, and an admin manages se
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/license/mit)
 ![Open Source](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)
-[![Stars](https://img.shields.io/github/stars/sadra-hatami/Student-Portal?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal/stargazers)
 
 <br>
 
