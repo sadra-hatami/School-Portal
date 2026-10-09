@@ -22,7 +22,6 @@ A two-sided school desk: students enroll and read marks, and an admin manages se
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://jquery.com/)
-[![Font Awesome](https://img.shields.io/badge/Font%20Awesome-4-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/v4/icons/)
 [![Sessions](https://img.shields.io/badge/Auth-PHP%20Sessions-4F5B93?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/manual/en/book.session.php)
 [![Admin](https://img.shields.io/badge/Side-Admin%20Panel-2C3E50?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal/tree/main/admin)
 [![Student](https://img.shields.io/badge/Side-Student%20Portal-1ABC9C?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal)
