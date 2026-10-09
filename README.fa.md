@@ -34,7 +34,7 @@
 
 [🌐 پروفایل گیت‌هاب](https://github.com/sadra-hatami)
 •
-[📘 English README](README.md)
+[📘 English README | راهنمای انگلیسی](README.md)
 •
 [📧 ایمیل](mailto:sadra.hatami.1732@gmail.com)
 
