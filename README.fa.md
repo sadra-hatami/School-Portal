@@ -1,6 +1,6 @@
 <div align="center">
 
-# پورتال دانشجویی
+# پورتال آموزشگاهی
 # 🎓
 
 ### یک پورتال PHP برای درس، ثبت‌نام و نمره
@@ -23,9 +23,9 @@
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://jquery.com/)
 [![Sessions](https://img.shields.io/badge/Auth-PHP%20Sessions-4F5B93?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/manual/en/book.session.php)
-[![Admin](https://img.shields.io/badge/Side-Admin%20Panel-2C3E50?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal/tree/main/admin)
-[![Student](https://img.shields.io/badge/Side-Student%20Portal-1ABC9C?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal)
-[![SQL](https://img.shields.io/badge/Schema-acourse.sql-003B57?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal/blob/main/sqlfile/acourse.sql)
+[![Admin](https://img.shields.io/badge/Side-Admin%20Panel-2C3E50?style=for-the-badge)](https://github.com/sadra-hatami/School-Portal/tree/main/admin)
+[![Student](https://img.shields.io/badge/Side-Student%20Portal-1ABC9C?style=for-the-badge)](https://github.com/sadra-hatami/School-Portal)
+[![SQL](https://img.shields.io/badge/Schema-acourse.sql-003B57?style=for-the-badge)](https://github.com/sadra-hatami/School-Portal/blob/main/sqlfile/acourse.sql)
 [![XAMPP](https://img.shields.io/badge/Run-XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)](https://www.apachefriends.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/license/mit)
 [![Open Source](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)](https://opensource.org/)
@@ -63,7 +63,7 @@
 
 # 📖 درباره
 
-**Student Portal** یک برنامهٔ وب PHP برای میز یک آموزشگاه است.
+**School Portal** یک برنامهٔ وب PHP برای میز یک آموزشگاه است.
 
 صفحه‌های ریشه سمت دانشجو هستند: پروفایل، ثبت‌نام درس، نمره و تغییر رمز. پوشهٔ `admin` سمت مدیریت است: جلسه، ترم، گروه، درس، ثبت‌نام و گزارش ورود. هر دو سمت یک پایگاه MySQL را می‌خوانند و می‌نویسند.
 
@@ -116,7 +116,7 @@
 # 📁 ساختار
 
 ```text
-Student-Portal/
+School-Portal/
 ├── index.php
 ├── enroll.php
 ├── marks.php
@@ -149,8 +149,8 @@ Student-Portal/
 # 🚀 نصب
 
 ```bash
-git clone https://github.com/sadra-hatami/Student-Portal.git
-cd Student-Portal
+git clone https://github.com/sadra-hatami/School-Portal.git
+cd School-Portal
 ```
 
 1. پوشه را زیر یک سرور PHP بگذار، مثل `htdocs` در XAMPP.
