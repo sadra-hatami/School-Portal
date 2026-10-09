@@ -34,7 +34,7 @@ A two-sided school desk: students enroll and read marks, and an admin manages se
 
 [🌐 GitHub Profile](https://github.com/sadra-hatami)
 •
-[📘 Persian README | نسخه فارسی راهنما](README.fa.md)
+[📘 Persian README | راهنمای فارسی](README.fa.md)
 •
 [📧 Email](mailto:sadra.hatami.1732@gmail.com)
 
