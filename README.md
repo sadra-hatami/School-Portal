@@ -30,7 +30,6 @@ A two-sided school desk: students enroll and read marks, and an admin manages se
 [![XAMPP](https://img.shields.io/badge/Run-XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)](https://www.apachefriends.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/license/mit)
 [![Open Source](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)](https://opensource.org/)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/sadra-hatami/Student-Portal)
 
 <br>
 
