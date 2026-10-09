@@ -65,7 +65,7 @@ A two-sided school desk: students enroll and read marks, and an admin manages se
 
 The root pages are the student side: profile, course enrollment, marks, and password change. The `admin` folder is the management side: sessions, semesters, departments, courses, registration, and logs. Both sides read and write the same MySQL database.
 
-> **Tagline:** *A PHP student and admin portal for courses, enrollment, and marks.*
+> **Tagline:** *A PHP student and admin portal for courses, enrollment, and marks, with a shared MySQL database.*
 
 This is a study portal, not a school information system for real student records.
 
