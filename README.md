@@ -20,8 +20,17 @@ A two-sided school desk: students enroll and read marks, and an admin manages se
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/docs/3.4/)
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white)](https://jquery.com/)
+[![Font Awesome](https://img.shields.io/badge/Font%20Awesome-4-528DD7?style=for-the-badge&logo=fontawesome&logoColor=white)](https://fontawesome.com/v4/icons/)
+[![Sessions](https://img.shields.io/badge/Auth-PHP%20Sessions-4F5B93?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/manual/en/book.session.php)
+[![Admin](https://img.shields.io/badge/Side-Admin%20Panel-2C3E50?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal/tree/main/admin)
+[![Student](https://img.shields.io/badge/Side-Student%20Portal-1ABC9C?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal)
+[![SQL](https://img.shields.io/badge/Schema-acourse.sql-003B57?style=for-the-badge)](https://github.com/sadra-hatami/Student-Portal/blob/main/sqlfile/acourse.sql)
+[![XAMPP](https://img.shields.io/badge/Run-XAMPP-FB7A24?style=for-the-badge&logo=xampp&logoColor=white)](https://www.apachefriends.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?style=for-the-badge)](https://opensource.org/license/mit)
-![Open Source](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)
+[![Open Source](https://img.shields.io/badge/Open_Source-Project-black?style=for-the-badge&logo=github)](https://opensource.org/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/sadra-hatami/Student-Portal)
 
 <br>
 
