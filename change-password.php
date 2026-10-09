@@ -1,32 +1,31 @@
 
+
 <?php
-session_start();//Start new or resume existing session
-include('includes/config.php');// includes file as if that code is present here
-error_reporting(0);//if error exists it ignore and doesnot show on screen
-// var_dump($_POST);
-if(strlen($_SESSION['login'])==0) //takes string from login and check the user enter coreect login details then he redirect to change password page otherwise goto index page
+session_start();
+include('includes/config.php');
+if(strlen($_SESSION['alogin'])==0)
     {   
-header('location:index.php');//directs to the index.php
+header('location:index.php');
 }
 else{
 date_default_timezone_set('Asia/Kolkata');// change according timezone
-$currentTime = date( 'd-m-Y h:i:s A', time () );//takes time from internet if connected otherwise take time from the pc clock.
+$currentTime = date( 'd-m-Y h:i:s A', time () );
 
 
-if(isset($_POST['submit']))//if it has value then its submit the form otherwise show error
+if(isset($_POST['submit']))
 {
-$sql=mysqli_query($con,"SELECT password FROM  staff where password='".md5($_POST['cpass'])."' AND StaffRegno='".$_SESSION['login']."'");
+$sql=mysqli_query($con,"SELECT password FROM  admin where password='".md5($_POST['cpass'])."' && username='".$_SESSION['alogin']."'");
 $num=mysqli_fetch_array($sql);
 if($num>0)
 {
- $sql=mysqli_query($con,"update staff set password='".md5($_POST['newpass'])."', updationDate='$currentTime' where StaffRegno='".$_SESSION['login']."'");
+ $con=mysqli_query($con,"update admin set password='".md5($_POST['newpass'])."', updationDate='$currentTime' where username='".$_SESSION['alogin']."'");
 $_SESSION['msg']="Password Changed Successfully !!";
-$is_red = false;
+$is_red=false;
 }
 else
 {
-$_SESSION['msg']="Current Password not match !!";
-$is_red = true;
+$_SESSION['msg']="Old Password not match !!";
+$is_red=true;
 }
 }
 ?>
@@ -34,13 +33,13 @@ $is_red = true;
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" /><!--The charset attribute specifies the character encoding for the HTML document.-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /><!--Fix the website according to the device-->
-    <meta name="description" content="" /><!-- show the description of wesite -->
-    <meta name="author" content="" /><!--show the name of author who create the website....such as Designed by Shivam-->
-    <title>Admin | Staff Password</title>
-    <link href="assets/css/bootstrap.css" rel="stylesheet" /><!--fetch the style from web called as bootstrap-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" /><!-- decribe the font of website-->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Admin | Change Password</title>
+    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
 </head>
 <script type="text/javascript">
@@ -48,52 +47,52 @@ function valid()
 {
 if(document.chngpwd.cpass.value=="")
 {
-alert("Current Password Filed is Empty !!");//cahnge password and confirm password field is not empty but new password field is empty
+alert("Current Password Filed is Empty !!");
 document.chngpwd.cpass.focus();
 return false;
 }
 else if(document.chngpwd.newpass.value=="")
 {
-alert("New Password Filed is Empty !!");//cahnge password and new password field is not empty but confirm password is empty
+alert("New Password Filed is Empty !!");
 document.chngpwd.newpass.focus();
 return false;
 }
 else if(document.chngpwd.cnfpass.value=="")
 {
-alert("Confirm Password Filed is Empty !!");//change password and confirm password field is not empty but new passpowrd field is empty.
+alert("Confirm Password Filed is Empty !!");
 document.chngpwd.cnfpass.focus();
 return false;
 }
 else if(document.chngpwd.newpass.value!= document.chngpwd.cnfpass.value)
 {
-alert("Password and Confirm Password Field do not match  !!");//password and confirm password field does not match
+alert("Password and Confirm Password Field do not match  !!");
 document.chngpwd.cnfpass.focus();
 return false;
 }
-return true;//all fields are not empty and confirm and new password is same so thats why it is true
+return true;
 }
 </script>
 <body>
 <?php include('includes/header.php');?>
     <!-- LOGO HEADER END-->
-<?php if($_SESSION['login']!="")
+<?php if($_SESSION['alogin']!="")
 {
  include('includes/menubar.php');
 }
  ?>
     <!-- MENU SECTION END-->
-    <div class="content-wrapper"><!--tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. -->
+    <div class="content-wrapper">
         <div class="container">
-              <div class="row"><!--tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. -->
+              <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Staff Change Password </h1>
+                        <h1 class="page-head-line">Admin Change Password </h1>
                     </div>
                 </div>
                 <div class="row" >
                   <div class="col-md-3"></div>
                     <div class="col-md-6">
                         <div class="panel panel-default">
-                        <div class="panel-heading"><!--tag is used as a container for HTML elements - which is then styled with CSS or manipulated with JavaScript. -->
+                        <div class="panel-heading">
                            Change Password
                         </div>
                         <?php
@@ -107,7 +106,7 @@ return true;//all fields are not empty and confirm and new password is same so t
                         }
                         
                         ?>
-<?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?></font><!--Convert all applicable characters to HTML entities..-->
+                        <?php echo htmlentities($_SESSION['msg']);?><?php echo htmlentities($_SESSION['msg']="");?></font>
 
 
                         <div class="panel-body">
@@ -127,7 +126,6 @@ return true;//all fields are not empty and confirm and new password is same so t
  
   <button type="submit" name="submit" class="btn btn-default">Submit</button>
                            <hr />
-						    <hr />
    
 
 

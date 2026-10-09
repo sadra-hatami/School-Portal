@@ -2,6 +2,7 @@
 <?php
 session_start();
 include('includes/config.php');
+error_reporting(0);
 if(strlen($_SESSION['alogin'])==0)
     {   
 header('location:index.php');
@@ -10,6 +11,19 @@ else{
 
 
 
+if(isset($_GET['del']))
+      {
+              mysqli_query($con,"delete from staff where StaffRegno = '".$_GET['id']."'");
+                  $_SESSION['delmsg']="Staff record deleted !!";
+      }
+
+     if(isset($_GET['pass']))
+      {
+        $password="Test@123";
+        $newpass=md5($password);
+              mysqli_query($con,"update staff set password='$newpass' where StaffRegno = '".$_GET['id']."'");
+                  $_SESSION['delmsg']="Password Reset. New Password is Test@123";
+      } 
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +33,7 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Enroll History</title>
+    <title>Admin | Manage staff</title>
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
     <link href="assets/css/style.css" rel="stylesheet" />
@@ -38,16 +52,17 @@ else{
         <div class="container">
               <div class="row">
                     <div class="col-md-12">
-                        <h1 class="page-head-line">Enroll History  </h1>
+                        <h1 class="page-head-line">Manage staff</h1>
                     </div>
                 </div>
                 <div class="row" >
-            
+                 
+                <font color="red" align="center"><?php echo htmlentities($_SESSION['delmsg']);?><?php echo htmlentities($_SESSION['delmsg']="");?></font>
                 <div class="col-md-12">
                     <!--    Bordered Table  -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                           Enroll History
+                            Manage staff
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -56,41 +71,37 @@ else{
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                                 <th>Student Name </th>
-                                                    <!-- <th>Reg no </th> -->
-                                            <th>Course Name </th>
-                                            <th>Session </th>
-                                            
-                                                <th>Semester</th>
-                                             <th>Enrollment Date</th>
+                                            <th>Reg No </th>
+                                            <th>Teacher Name </th>
+                                            <th> Pincode</th>
+                                             <th>Reg Date</th>
                                              <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
 <?php
-// $sql=mysqli_query($con,"select courseenrolls.course as cid, course.courseName as courname,session.session as session,department.department as dept,courseenrolls.enrollDate as edate ,semester.semester as sem,students.studentName as sname,students.StudentRegno as sregno from courseenrolls join course on course.id=courseenrolls.course join session on session.id=courseenrolls.session join department on department.id=courseenrolls.department   join semester on semester.id=courseenrolls.semester join students on students.StudentRegno=courseenrolls.studentRegno ");
-$sql=mysqli_query($con,"select * from student");
+$sql=mysqli_query($con,"select * from staff");
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
 {
-
 ?>
 
 
                                         <tr>
                                             <td><?php echo $cnt;?></td>
-                                              <td><?php echo htmlentities($row['courseName']);?></td>
-                                            <!-- <td><?php //echo htmlentities($row['sregno']);?></td> -->
-                                            <td><?php echo htmlentities($row['courseCode']);?></td>
-                                            <td><?php echo htmlentities($row['sessionName']);?></td>
-                                          
-                                            <td><?php echo htmlentities($row['semesterName']);?></td>
-                                             <td><?php echo htmlentities($row['creationDate']);?></td>
+                                            <td><?php echo htmlentities($row['StaffRegno']);?></td>
+                                            <td><?php echo htmlentities($row['staffName']);?></td>
+                                            <td><?php echo htmlentities($row['pincode']);?></td>
+                                            <td><?php echo htmlentities($row['creationdate']);?></td>
                                             <td>
-                                            <a href="print.php?id=<?php echo $row['id']?>" target="_blank">
-<button class="btn btn-primary"><i class="fa fa-print "></i> Print</button> </a>                                        
-
-
+                                            <a href="edit-student-profile.php?id=<?php echo $row['StaffRegno']?>">
+                                      
+<a href="manage-students.php?id=<?php echo $row['StaffRegno']?>&del=delete" onClick="return confirm('Are you sure you want to delete?')">
+                                            <button class="btn btn-danger">Delete</button>
+</a>
+<a href="manage-students.php?id=<?php echo $row['StaffRegno']?>&pass=update" onClick="return confirm('Are you sure you want to reset password?')">
+<button type="submit" name="submit" id="submit" class="btn btn-default">Reset Password</button>
+</a>
                                             </td>
                                         </tr>
 <?php 
